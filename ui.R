@@ -14,7 +14,7 @@ library(randomForest)
 
 
 ui<-shinyUI(fluidPage(
-  tags$head(includeScript("google-analytics.js")),
+  # tags$head(includeScript("google-analytics.js")),
   theme = "blue.css",
 pageWithSidebar(
   headerPanel('Web Scraper'),
@@ -32,9 +32,9 @@ pageWithSidebar(
     # htmlOutput("site"),
     h4("Reference Links:"),
     br(),
-    a(img(src="CSSTWO.png",width="35",height="35"),href="http://www.w3schools.com/css/default.asp", target="_blank"),
-    a(img(src="html.png",width="35",height="35"),href="http://www.w3schools.com/html/default.asp", target="_blank"),
-    a(img(src="java2.png",width="35",height="35"),href="http://www.w3schools.com/js/default.asp", target="_blank"),
+    a(img(src="img/CSSTWO.png",width="35",height="35"),href="http://www.w3schools.com/css/default.asp", target="_blank"),
+    a(img(src="img/html.png",width="35",height="35"),href="http://www.w3schools.com/html/default.asp", target="_blank"),
+    a(img(src="img/java2.png",width="35",height="35"),href="http://www.w3schools.com/js/default.asp", target="_blank"),
     # 
     br(),
     br(),
@@ -45,7 +45,9 @@ pageWithSidebar(
     textInput(inputId = "name",label = "Save File As:",value = "",placeholder = "Type File Name Here"),
     # downloadButton('download', 'Download',class = "butt")
     br(),
-    downloadButton("download", label="Download")
+    downloadButton("download", label="Download"),
+    hr(),
+    downloadButton(outputId="webreport",label = "Report")
     #tags$head(tags$style(".butt{background-color:black;} .butt{color: white;}"))
 
   ),

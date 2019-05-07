@@ -1,0 +1,21 @@
+---
+title: "WebScraper Output"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+params:
+  set_author: "Wikipedia"
+  s: NA
+  w: NA
+author: "`r params$set_author`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+
+
+```{r echo=FALSE}
+cat(params$s)
+```
+

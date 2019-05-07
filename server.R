@@ -62,6 +62,45 @@ server <- function(input, output) {
         
       })
 
-   
+   ###Rmarkdown Report for WebScraper
+    output$webreport<- downloadHandler(
+      filename = function() {
+        paste('Web Scraper Report','html', sep = '.')
+      },
+      
+      
+      
+      
+      content = function(file) {
+        src <- normalizePath('./web.Rmd')
+        # temporarily switch to the temp dir, in case you do not have write
+        # permission to the current working directory
+        # owd <- setwd(tempdir())
+        # on.exit(setwd(owd))
+        # file.copy(src, './report.Rmd', overwrite = TRUE)
+        
+        webReport <- file.path(tempdir(), "./web.Rmd")
+
+        file.copy("./web.Rmd", webReport, overwrite = TRUE)
+
+        
+        
+        library(rmarkdown)
+        out <- render(input = 'web.Rmd',output_format = html_document()
+                      #               switch(
+                      # input$format,
+                      # PDF = pdf_document(), HTML = html_document(), Word = word_document()
+        )
+        file.rename(out, file)
+        
+        #     # Set up parameters to pass to Rmd document
+        params <- list(s = df(),set_author = input$text)
+        rmarkdown::render(webReport, output_file = file,
+                          params = params,
+                          envir = new.env(parent = globalenv())
+        )
+        
+      }
+    )
 
 }
