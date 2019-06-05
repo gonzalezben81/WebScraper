@@ -32,9 +32,9 @@ pageWithSidebar(
     # htmlOutput("site"),
     h4("Reference Links:"),
     br(),
-    a(img(src="img/CSSTWO.png",width="35",height="35"),href="http://www.w3schools.com/css/default.asp", target="_blank"),
-    a(img(src="img/html.png",width="35",height="35"),href="http://www.w3schools.com/html/default.asp", target="_blank"),
-    a(img(src="img/java2.png",width="35",height="35"),href="http://www.w3schools.com/js/default.asp", target="_blank"),
+    a(img(src="./CSSTWO.png",width="35",height="35"),href="http://www.w3schools.com/css/default.asp", target="_blank"),
+    a(img(src="./html.png",width="35",height="35"),href="http://www.w3schools.com/html/default.asp", target="_blank"),
+    a(img(src="./java2.png",width="35",height="35"),href="http://www.w3schools.com/js/default.asp", target="_blank"),
     # 
     br(),
     br(),
